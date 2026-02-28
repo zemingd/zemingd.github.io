@@ -18,35 +18,33 @@
   }
 </style>
 
-  <script>
-    function showPubs(id) {
-      // id=0 => "Selected"; id=1 => "All"
+<script>
+  function showPubs(id) {
+    id = String(id);
 
-      if (id == 0) {
-        document.getElementById('pubs_selected').classList.remove('hidden');
-        document.getElementById('pubs_by_date').classList.add('hidden');
-        document.getElementById('select0').style = 'text-decoration:underline;';
-        document.getElementById('select1').style = '';
-      } else {
-        document.getElementById('pubs_selected').classList.add('hidden');
-        document.getElementById('pubs_by_date').classList.remove('hidden');
-        document.getElementById('select1').style = 'text-decoration:underline;';
-        document.getElementById('select0').style = '';
-      }
+    const pubs_selected = document.getElementById('pubs_selected');
+    const pubs_by_date  = document.getElementById('pubs_by_date');
+    const select0 = document.getElementById('select0');
+    const select1 = document.getElementById('select1');
 
-      // Save user’s choice
-      sessionStorage.setItem('activeTab', id);
+    // If "All" container doesn't exist, always show selected
+    if (!pubs_by_date) id = "0";
+
+    if (id === "0") {
+      if (pubs_selected) pubs_selected.classList.remove('hidden');
+      if (pubs_by_date)  pubs_by_date.classList.add('hidden');
+      if (select0) select0.style.textDecoration = 'underline';
+      if (select1) select1.style.textDecoration = '';
+    } else {
+      if (pubs_selected) pubs_selected.classList.add('hidden');
+      if (pubs_by_date)  pubs_by_date.classList.remove('hidden');
+      if (select1) select1.style.textDecoration = 'underline';
+      if (select0) select0.style.textDecoration = '';
     }
 
-    // On page load, restore the previously active tab (or default to 0)
-    window.addEventListener('DOMContentLoaded', function() {
-      let activeTab = sessionStorage.getItem('activeTab');
-      if (activeTab === null) {
-        activeTab = 1; // default
-      }
-      showPubs(activeTab);
-    });
-  </script>
+    sessionStorage.setItem('activeTab', id);
+  }
+</script>
 
 <style>
 /* The container that holds both the image and the overlaid video */
@@ -168,7 +166,7 @@
           <div id="pubs"></div>
 
           <!-- Hidden container: first two publications only (show selected) -->
-          <div id="pubs_selected" class="hidden">
+          <div id="pubs_selected">
             <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
               <tbody>
                 <tr onmouseout="som_stop()" onmouseover="som_start()">
@@ -403,6 +401,9 @@
                     <a href="https://ieeexplore.ieee.org/document/8097076">Link</a>
                   </td>
                 </tr>
+              </tbody>
+            </table>
+          </div>  <!-- end of pubs_selected -->
 
 
 
