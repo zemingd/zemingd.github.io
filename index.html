@@ -169,6 +169,45 @@
           <div id="pubs_selected">
             <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
               <tbody>
+
+                 <tr onmouseout="som_stop()" onmouseover="som_start()">
+                  <td style="padding:20px;width:35%;vertical-align:middle">
+                    <div class="one">
+                      <div class="two" id='som_image'>
+                      </div>
+                      <img src='images/Multivul.png' id='som_before'  width="250">
+                    </div>
+                    <script type="text/javascript">
+                      function som_start() {
+                        document.getElementById('som_image').style.opacity = "1";
+                      }
+                      function som_stop() {
+                        document.getElementById('som_image').style.opacity = "0";
+                      }
+                      som_stop()
+                    </script>
+                  </td>
+
+                  <td style="padding:20px;width:75%;vertical-align:middle">
+                    <a href="https://arxiv.org/abs/2604.25711">
+                      <papertitle>Learning Generalizable Multimodal Representations for Software Vulnerability Detection</papertitle>
+                    </a>
+                    <br>
+                    <strong>Zeming Dong</strong>,
+                    <a href="https://scholar.google.com/citations?user=-Ifa51EAAAAJ&hl=en">Yuejun Guo</a>,
+                    <a href="https://wellido.github.io/">Qiang Hu</a>,
+                    <a href="https://confz.github.io/">Yao Zhang</a>,
+                    <a href="https://maxcordy.github.io/">Maxime Cordy</a>,
+                    <a href="https://openreview.net/profile?id=~Hao_Liu90">Hao Liu</a>,
+                    <a href="https://mpapad.github.io/">Mike Papadakis</a>,
+                    <a href="https://openreview.net/profile?id=~Yongqiang_Lyu1">Yongqiang Lyu</a>
+                    <br>
+                    <em>Preprint</em>, 2026
+                    <br>
+                    <a href="https://arxiv.org/abs/2604.25711">arXiv</a>
+                  </td>
+                </tr> 
+
                 <tr onmouseout="som_stop()" onmouseover="som_start()">
                   <td style="padding:20px;width:35%;vertical-align:middle">
                     <div class="one">
@@ -352,7 +391,7 @@
                     <br>
                     <strong>Zeming Dong</strong>,
                     <a href="https://wellido.github.io/">Qiang Hu</a>,
-                     <a href="https://scholar.google.com/citations?user=-Ifa51EAAAAJ&hl=en">Yuejun Guo</a>,
+                    <a href="https://scholar.google.com/citations?user=-Ifa51EAAAAJ&hl=en">Yuejun Guo</a>,
                     <a href="https://maxcordy.github.io/">Maxime Cordy</a>,
                     <a href="https://mpapad.github.io/">Mike Papadakis</a>,
                     <a href="https://choshina.github.io/">Zhenya Zhang</a>,
